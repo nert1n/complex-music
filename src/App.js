@@ -5,7 +5,6 @@ import Header from './components/UI/Header/Header';
 import Player from './components/UI/Player/Player';
 import AppRouter from './components/AppRouter';
 import Sidebar from './components/UI/Sidebar/Sidebar';
-import Footer from './components/UI/Footer/Footer';
 
 function App() {
   return (
@@ -14,12 +13,9 @@ function App() {
         <Header/>
         <div className='app__holder'>
           <Sidebar/>
-          <div>
 
-            <AppRouter/>
-            
-            <Footer/>
-          </div>
+          <AppRouter/>
+
         </div>
         <Player/>
       </BrowserRouter>

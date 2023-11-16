@@ -1,6 +1,6 @@
 {
   "name": "react-complex-music",
-  "version": "0.0.1",
+  "version": "0.1",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",

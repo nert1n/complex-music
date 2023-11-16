@@ -3,7 +3,8 @@ import cl from '../Player.module.scss'
 import { useSelector } from 'react-redux';
 
 export default function Right(props) {
-  const currentTrack = useSelector((state) => state.currentTrack);
+  const isTracks = useSelector((state) => state.tracks);
+  const currentTrack = isTracks.tracks[isTracks.activeTrack];
   const audio = props.audioPlayer.current;
   const [sound, setSound] = useState('/img/sound/sound.svg')
   const [volume, setVolume] = useState(100)
@@ -59,9 +60,6 @@ export default function Right(props) {
           onChange={handleVolumeChange}
         />
       </div>
-      <button className={cl.player__browser} disabled={disabled}>
-        <img className={cl.player__browser_img} disabled={disabled} src="/img/icons/browser.svg" alt="Browser" />
-      </button>
     </div>
   )
 }

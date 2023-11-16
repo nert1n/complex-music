@@ -2,9 +2,11 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { privateRoutes, publicRoutes } from '../router'
 import Error from './UI/Error/Error';
+import { useSelector } from 'react-redux';
 
 export default function AppRouter() {
-    const isAuth = true
+    const isAuth = useSelector((state) => state.auth.value);
+
     return (
         <main className='main'>
             <div className='container'>

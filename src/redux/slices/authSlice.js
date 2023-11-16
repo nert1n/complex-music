@@ -8,7 +8,7 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        isTrue: (state, action) => {
+        isTrue: (state) => {
             state.value = !state.value
         },
     },

@@ -10,7 +10,7 @@ body {
 
 .container {
     width: 100%;
-    padding: 8px;
+    padding: 5px;
 }
 
 .app__holder {
@@ -22,7 +22,7 @@ body {
 .main {
     width: 70vw;
     &__holder {
-        min-height: calc(100vh - 286px);
+        min-height: calc(100vh - 198px);
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);

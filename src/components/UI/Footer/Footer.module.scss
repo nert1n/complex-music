@@ -1,20 +1,14 @@
 .footer {
-    &__holder {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 54px;
-        font-size: 16px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5) ;
-        padding: 15px 30px;
-        a {
-            color: #317EC5;
-            text-decoration: underline;
-            &:hover {
-                color: #1c68af;
-            }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin-top: 50px;
+    a {
+        color: #317EC5;
+        text-decoration: underline;
+        &:hover {
+            color: #1c68af;
         }
     }
 }

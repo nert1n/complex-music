@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { syncState } from '../redux/slices/currentTrackSlice';
 import { Link } from 'react-router-dom';
+import { isActive } from '../redux/slices/tracksSlice';
 
 export default function Playlist(props) {
-    const tracks = useSelector((state) => state.tracks.tracks);
-    
-    const [currentPlaylist, setCurrentPlaylist] = useState(tracks[props.playlist.id_track[0]])
+    const isTracks = useSelector((state) => state.tracks);
+    const [currentPlaylist, setCurrentPlaylist] = useState(isTracks.tracks[props.playlist.id_track[0]])
 
     const dispatch = useDispatch()
     const handlePlaylistChange = () => {
-        dispatch(syncState(currentPlaylist))
-    }; 
+        dispatch(isActive(currentPlaylist))
+    };
+
     return (
         <div className='playlist' onClick={handlePlaylistChange}>
             <button className='playlist__button'>

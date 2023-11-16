@@ -1,13 +1,15 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { syncState } from '../redux/slices/currentTrackSlice';
 import { Link } from 'react-router-dom';
+import { isActive } from '../redux/slices/tracksSlice';
 
 export default function TracksCard(props) {
     const dispatch = useDispatch()
+
     const handleTrackChange = () => {
-        dispatch(syncState(props.tracks))
+        dispatch(isActive(props.tracks.id))
     };
+    
     return (
         <div className='tracks__card'>
             <Link className='tracks__card_button'  onClick={handleTrackChange}>
