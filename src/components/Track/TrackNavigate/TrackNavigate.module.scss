@@ -1,0 +1,43 @@
+.navigate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__holder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__play {
+        margin: 0 20px;
+
+        &_img {
+
+        }
+    }
+    
+    &__arrow {
+        width: 20px;
+
+        &_img {
+
+        }
+    }
+
+    &__repeat {
+        margin-left: 20px;
+
+        &_img {
+
+        }
+    }
+
+    &__shuffle {
+        margin-right: 20px;
+
+        &_img {
+            
+        }
+    }
+}

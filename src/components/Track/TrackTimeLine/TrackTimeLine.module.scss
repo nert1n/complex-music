@@ -1,0 +1,16 @@
+.time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__start {
+        font-size: 12px;
+    }
+    &__line {
+        width: 400px;
+        height: 10px;
+        margin: 0 8px;
+    }
+    &__end {
+        font-size: 12px;
+    }
+}

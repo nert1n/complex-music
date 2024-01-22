@@ -1,34 +1,34 @@
 {
   "name": "react-complex-music",
-  "version": "0.1",
+  "version": "0.1.1",
   "private": true,
+  "homepage": "https://nert1n.github.io/complex-music",
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.7",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@reduxjs/toolkit": "^2.0.1",
+    "@testing-library/jest-dom": "^6.2.0",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.2",
     "node-sass": "^9.0.0",
+    "rc-slider": "^10.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.1.3",
-    "react-router-dom": "^6.18.0",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.21.3",
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
     "resolve-url-loader": "^5.0.0",
-    "sass-loader": "^13.3.2",
-    "web-vitals": "^2.1.4"
+    "sass-loader": "^14.0.0",
+    "web-vitals": "^3.5.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "lint": "eslint -c .eslintrc --ext .js,.jsx .",
+    "lint:fix": "npm run lint -- --fix"
   },
   "browserslist": {
     "production": [
@@ -41,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }

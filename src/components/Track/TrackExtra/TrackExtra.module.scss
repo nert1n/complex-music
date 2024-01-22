@@ -1,0 +1,19 @@
+.extra {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 20vw;
+    &__sound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    &__mute {
+        &_img {}
+    }
+    &__slider {
+        display: flex;
+        width: 100px;
+        margin-left: 10px;
+    }
+}
