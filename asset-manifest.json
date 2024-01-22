@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/complex-music/static/css/main.ac3a7848.css",
+    "main.js": "/complex-music/static/js/main.b33f3b86.js",
+    "static/media/loop.svg": "/complex-music/static/media/loop.ecd34483d3052ec9df3b.svg",
+    "index.html": "/complex-music/index.html",
+    "main.ac3a7848.css.map": "/complex-music/static/css/main.ac3a7848.css.map",
+    "main.b33f3b86.js.map": "/complex-music/static/js/main.b33f3b86.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac3a7848.css",
+    "static/js/main.b33f3b86.js"
+  ]
+}
