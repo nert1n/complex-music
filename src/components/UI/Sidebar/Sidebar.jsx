@@ -1,7 +1,7 @@
-import React from 'react'
-import cl from './Sidebar.module.scss'
-import Playlist from '../../Playlist';
+import React from 'react';
 import { useSelector } from 'react-redux';
+import Playlist from '../../Playlist';
+import cl from './Sidebar.module.scss';
 
 export default function Sidebar() {
   const playlists = useSelector((state) => state.playlists.playlists);
@@ -14,7 +14,7 @@ export default function Sidebar() {
             <p className={cl.sidebar__name}>Playlists</p>
             <button className={cl.sidebar__button}>+</button>
           </div>
-          <input className={cl.sidebar__input} type="search" placeholder="Search..."/>
+          <input className={cl.sidebar__input} type='search' placeholder='Search...'/>
           <div className={cl.sidebar__playlists}>
             {playlists.map((el) => (
               <Playlist playlist={el} key={el.id}/>
@@ -23,5 +23,5 @@ export default function Sidebar() {
         </div>
       </div>
     </div>
-  )
+  );
 }

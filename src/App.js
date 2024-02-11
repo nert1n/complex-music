@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import './scss/style.scss'
+import './scss/style.scss';
 import Header from './components/UI/Header/Header';
 import Player from './components/UI/Player/Player';
 import AppRouter from './components/AppRouter';
@@ -8,16 +8,15 @@ import Sidebar from './components/UI/Sidebar/Sidebar';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <BrowserRouter>
-        <Header/>
+        <Header />
         <div className='app__holder'>
-          <Sidebar/>
+          <Sidebar />
 
-          <AppRouter/>
-
+          <AppRouter />
         </div>
-        <Player/>
+        <Player />
       </BrowserRouter>
     </div>
   );

@@ -1,11 +1,12 @@
 import React, { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { isActive, isPlay } from '../../../redux/slices/tracksSlice';
-import cl from './Player.module.scss';
 import TrackInfo from '../../Track/TrackInfo/TrackInfo';
+import cl from './Player.module.scss';
 import TrackNavigate from './../../Track/TrackNavigate/TrackNavigate';
 import TrackTimeLine from './../../Track/TrackTimeLine/TrackTimeLine';
 import TrackExtra from './../../Track/TrackExtra/TrackExtra';
+import audio from '../../../assets/music/BRAZILIAN-PHONK.mp3';
 
 export default function Player() {
   const isTracks = useSelector((state) => state.tracks);
@@ -26,24 +27,32 @@ export default function Player() {
       setCurrentTime(audio.currentTime);
       setDuration(audio.duration);
     }
-  }
+  };
 
   const mathRandom = (min, max) => {
-    let id = Math.floor(Math.random() * max) + min
+    const id = Math.floor(Math.random() * max) + min;
     return id;
-  }
+  };
 
   const changeTrack = () => {
     if (isShuffle) {
       const state = mathRandom(1, isTracks.tracks.length);
-      if (isTracks.tracks.length > 0 && state >= 0 && state < isTracks.tracks.length) {
-        dispatch(isActive(state))
+      if (
+        isTracks.tracks.length > 0 &&
+        state >= 0 &&
+        state < isTracks.tracks.length
+      ) {
+        dispatch(isActive(state));
       } else {
         dispatch(isActive(1));
       }
     } else {
       const state = isTracks.activeTrack + 1;
-      if (isTracks.tracks.length > 0 && state >= 0 && state < isTracks.tracks.length) {
+      if (
+        isTracks.tracks.length > 0 &&
+        state >= 0 &&
+        state < isTracks.tracks.length
+      ) {
         dispatch(isActive(state));
       } else {
         dispatch(isActive(1));
@@ -64,9 +73,15 @@ export default function Player() {
             ref={audioRef}
             autoPlay={true}
             loop={false}
-            onPlay={() => {dispatch(isPlay(true))}}
-            onPause={() => {dispatch(isPlay(false))}}
-            onAbort={() => {dispatch(isPlay(true))}}
+            onPlay={() => {
+              dispatch(isPlay(true));
+            }}
+            onPause={() => {
+              dispatch(isPlay(false));
+            }}
+            onAbort={() => {
+              dispatch(isPlay(true));
+            }}
             onEnded={changeTrack}
             //onError={(error) => console.error('Error during audio playback:', error)}
             //onSeeked={(time) => console.log('Seeked to', time)}
@@ -74,11 +89,10 @@ export default function Player() {
             //onCanPlay={() => console.log('Audio can play')}
             onTimeUpdate={handleTimeUpdate}
           />
-          <TrackInfo/>
+          <TrackInfo />
           <div>
-            
-            {audioRef.current != null
-            ? <>
+            {audioRef.current != null ? (
+              <>
                 <TrackNavigate
                   audioRef={audioRef}
                   shuffleChange={shuffleChange}
@@ -87,15 +101,16 @@ export default function Player() {
                 <TrackTimeLine
                   audioRef={audioRef}
                   duration={duration}
-                  currentTime={currentTime} 
+                  currentTime={currentTime}
                   setCurrentTime={setCurrentTime}
                   setIsDragging={setIsDragging}
                 />
               </>
-            : ''
-            }
+            ) : (
+              ''
+            )}
           </div>
-          <TrackExtra audioRef={audioRef}/>
+          <TrackExtra audioRef={audioRef} />
         </div>
       </div>
     </div>

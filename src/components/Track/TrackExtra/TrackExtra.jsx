@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import cl from './TrackExtra.module.scss'
+import React, { useEffect, useState } from 'react';
 import Slider from 'rc-slider';
+import cl from './TrackExtra.module.scss';
 
 export default function TrackExtra(props) {
-  const [volume, setVolume] = useState(100)
-  const [oldVolume, setOldVolume] = useState(50)
+  const [volume, setVolume] = useState(100);
+  const [oldVolume, setOldVolume] = useState(50);
 
   const [sound, setSound] = useState('sound');
 
@@ -19,30 +19,30 @@ export default function TrackExtra(props) {
   }, [volume]);
 
   const volumeChange = (event) => {
-    setVolume(event)
+    setVolume(event);
     props.audioRef.current.volume = event / 100;
   };
 
   const volumeMute = () => {
     if (volume > 0) {
-      setOldVolume(volume)
-      setVolume(0)
+      setOldVolume(volume);
+      setVolume(0);
       props.audioRef.current.volume = 0;
     } else {
-      setVolume(oldVolume)
+      setVolume(oldVolume);
       props.audioRef.current.volume = oldVolume / 100;
     }
-  }
+  };
 
   return (
     <div className={cl.extra}>
       <div className={cl.extra__sound}>
         <button className={cl.extra__mute} onClick={volumeMute}>
-          <img className={cl.extra__mute_img} src={`/img/icons/sound/${sound}.svg`} alt="Sound" />
+          <img className={cl.extra__mute_img} src={`/img/icons/sound/${sound}.svg`} alt='Sound' />
         </button>
         <div className={cl.extra__slider}>
           <Slider
-            type="range"
+            type='range'
             min={0}
             max={100}
             value={volume}
@@ -51,5 +51,5 @@ export default function TrackExtra(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

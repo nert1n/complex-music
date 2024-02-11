@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import cl from './TrackTimeLine.module.scss';
+import React, { useEffect, useState } from 'react';
 import Slider from 'rc-slider';
+import cl from './TrackTimeLine.module.scss';
 
 export default function TrackTimeLine(props) {
-  const [currentTime, setCurrentTime] = useState(0)
+  const [currentTime, setCurrentTime] = useState(0);
   const audio = props.audioRef.current;
 
   const formatTime = (time) => {
@@ -19,12 +19,12 @@ export default function TrackTimeLine(props) {
 
   const seek = (event) => {
     audio.currentTime = event;
-    setCurrentTime(event)
+    setCurrentTime(event);
   };
 
   useEffect(() => {
-    setCurrentTime(Math.round(props.currentTime))
-  }, [props.currentTime])
+    setCurrentTime(Math.round(props.currentTime));
+  }, [props.currentTime]);
 
   return (
     <div className={cl.time}>
@@ -32,19 +32,19 @@ export default function TrackTimeLine(props) {
         {Math.floor(currentTime / 60)}:
         {
           Math.floor(currentTime % 60) <= 9
-          ? `0${Math.floor(currentTime % 60)}`
-          : Math.floor(currentTime % 60)
+            ? `0${Math.floor(currentTime % 60)}`
+            : Math.floor(currentTime % 60)
         }
       </p>
-          <Slider
-            className={cl.time__line}
-            type="range"
-            min={0}
-            max={Math.round(audio.duration)}
-            value={currentTime}
-            onChange={seek}
-          />
+      <Slider
+        className={cl.time__line}
+        type='range'
+        min={0}
+        max={Math.round(audio.duration)}
+        value={currentTime}
+        onChange={seek}
+      />
       <p className={cl.time__end}>{formatTime(audio.duration)}</p>
-  </div>
-  )
+    </div>
+  );
 }
