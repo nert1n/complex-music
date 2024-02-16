@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/complex-music/static/css/main.83eb2a51.css",
-    "main.js": "/complex-music/static/js/main.2d278547.js",
-    "static/media/BRAZILIAN-PHONK.mp3": "/complex-music/static/media/BRAZILIAN-PHONK.3b61bc3bf12c2c5d4bdf.mp3",
-    "static/media/loop.svg": "/complex-music/static/media/loop.ecd34483d3052ec9df3b.svg",
-    "index.html": "/complex-music/index.html",
-    "main.83eb2a51.css.map": "/complex-music/static/css/main.83eb2a51.css.map",
-    "main.2d278547.js.map": "/complex-music/static/js/main.2d278547.js.map"
+    "main.css": "/static/css/main.9fc547d3.css",
+    "main.js": "/static/js/main.0f8de6c9.js",
+    "static/media/BRAZILIAN-PHONK.mp3": "/static/media/BRAZILIAN-PHONK.3b61bc3bf12c2c5d4bdf.mp3",
+    "static/media/loop.svg": "/static/media/loop.ecd34483d3052ec9df3b.svg",
+    "index.html": "/index.html",
+    "main.9fc547d3.css.map": "/static/css/main.9fc547d3.css.map",
+    "main.0f8de6c9.js.map": "/static/js/main.0f8de6c9.js.map"
   },
   "entrypoints": [
-    "static/css/main.83eb2a51.css",
-    "static/js/main.2d278547.js"
+    "static/css/main.9fc547d3.css",
+    "static/js/main.0f8de6c9.js"
   ]
 }
